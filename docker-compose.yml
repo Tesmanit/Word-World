@@ -1,0 +1,14 @@
+services:
+  front_end:
+    container_name: react
+    environment:
+      WATCHPACK_POLLING: "true"
+    build: ./frontend
+    ports:
+    - "3000:3000"
+    volumes:
+      - "./frontend:/app"
+      - "node_modules:/app/node_modules"
+
+volumes:
+  node_modules:
